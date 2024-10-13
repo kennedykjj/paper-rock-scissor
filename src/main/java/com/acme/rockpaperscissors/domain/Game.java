@@ -1,22 +1,32 @@
 package com.acme.rockpaperscissors.domain;
 
-import jakarta.persistence.*;
+import com.acme.rockpaperscissors.domain.enums.GameStatus;
 import lombok.AllArgsConstructor;
+import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import org.springframework.data.annotation.Id;
+import org.springframework.data.mongodb.core.mapping.Document;
 
 import java.time.LocalDateTime;
+import java.util.ArrayList;
 
-@Entity
+@Data
 @AllArgsConstructor
 @NoArgsConstructor
-@Data
+@Builder
+@Document(collection = "game")
 public class Game {
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
-    private Long id;
-    private String status;
-    private String difficulty;
-    private String score;
+    private String id;
+    private String playerId;
+    private GameStatus status;
+    private ArrayList<Round> rounds = new ArrayList<>();
     private LocalDateTime startTime;
-    private LocalDateTime endTime;}
+    private LocalDateTime endTime;
+
+    public void newRound(Round round) {
+        rounds.add(round);
+    }
+
+}

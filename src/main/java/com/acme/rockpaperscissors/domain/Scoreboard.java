@@ -1,14 +1,19 @@
 package com.acme.rockpaperscissors.domain;
 
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+import org.springframework.data.annotation.Id;
+import org.springframework.data.mongodb.core.mapping.Document;
 
+@Data
+@AllArgsConstructor
+@NoArgsConstructor
+@Document(collection = "scoreboard")
 public class Scoreboard {
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
-    private Long id;
-    private Player player;
-    private Game game;
-
+    private String id;
+    private String playerId;
+    private String gameId;
+    private Double winRate;
 }
