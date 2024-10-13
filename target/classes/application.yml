@@ -1,0 +1,14 @@
+spring:
+ application:
+  name: rock-paper-scissors
+
+ data:
+  mongodb:
+#   uri: ${SPRING_DATA_MONGODB_URI}
+    uri: mongodb+srv://user:user@cluster0.jd9noeg.mongodb.net/rock-paper-scissors?retryWrites=true&w=majority&appName=Cluster0
+
+logging:
+ level:
+  org:
+   springframework:
+    security: DEBUG
