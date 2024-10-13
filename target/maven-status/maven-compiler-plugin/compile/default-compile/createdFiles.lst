@@ -1,0 +1,7 @@
+com/acme/rockpaperscissors/service/PlayerService.class
+com/acme/rockpaperscissors/domain/Scoreboard.class
+com/acme/rockpaperscissors/RockPaperScissorsApplication.class
+com/acme/rockpaperscissors/domain/Player.class
+com/acme/rockpaperscissors/domain/Game.class
+com/acme/rockpaperscissors/repository/PlayerRepository.class
+com/acme/rockpaperscissors/controller/PlayerController.class
