@@ -3,6 +3,7 @@ package com.acme.rockpaperscissors.controller;
 import com.acme.rockpaperscissors.domain.Game;
 import com.acme.rockpaperscissors.domain.enums.Move;
 import com.acme.rockpaperscissors.service.GameService;
+import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 import reactor.core.publisher.Flux;
 import reactor.core.publisher.Mono;
@@ -18,6 +19,7 @@ public class GameController {
     }
 
     @PostMapping("/start")
+    @ResponseStatus(HttpStatus.CREATED)
     public Mono<Game> startGame(@RequestParam String playerId) {
         return gameService.startGame(playerId);
     }
